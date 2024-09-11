@@ -1,0 +1,105 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    display: flex;
+    flex-flow: row-reverse wrap-reverse;
+    column-gap: 200px;
+}
+
+.slider-view {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+}
+
+.slide1,
+.slide2,
+.slide3,
+.slide4 {
+    width: 100vw;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.slide1 {
+    background-color: brown;
+}
+
+.slide2 {
+    background-color: aquamarine;
+}
+
+.slide3 {
+    background-color: beige;
+}
+
+.slide4 {
+    background-color: rgb(216, 216, 24);
+
+}
+
+.description-view {
+    width: 30vw;
+    overflow: hidden;
+}
+
+.description {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.text1,
+.text2,
+.text3,
+.text4 {
+    width: 30vw;
+    flex-shrink: 0;
+}
+
+.controls:has(input[id='1']:checked)+*+.slider-view .slider {
+    transform: translateX(0%);
+    transition: 1s;
+}
+
+.controls:has(input[id='2']:checked)+*+.slider-view .slider {
+    transform: translateX(-100%);
+    transition: 1s;
+}
+
+.controls:has(input[id='3']:checked)+*+.slider-view .slider {
+    transform: translateX(-200%);
+    transition: 1s;
+}
+
+.controls:has(input[id='4']:checked)+*+.slider-view .slider {
+    transform: translateX(-300%);
+    transition: 1s;
+}
+
+.controls:has(input[id='1']:checked)+.description-view .description {
+    transform: translateX(0%);
+    transition: 1s;
+}
+
+.controls:has(input[id='2']:checked)+.description-view .description {
+    transform: translateX(-100%);
+    transition: 1s;
+}
+
+.controls:has(input[id='3']:checked)+.description-view .description {
+    transform: translateX(-200%);
+    transition: 1s;
+}
+
+.controls:has(input[id='4']:checked)+.description-view .description {
+    transform: translateX(-300%);
+    transition: 1s;
+}
