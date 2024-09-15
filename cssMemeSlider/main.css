@@ -26,6 +26,7 @@ body {
 .controls {
     order: 3;
     display: flex;
+    gap: 0.5em;
 }
 
 label {
@@ -162,7 +163,7 @@ img {
     transition: 0.4s;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:650px) {
 
     .container {
         flex-direction: column;
@@ -176,11 +177,13 @@ img {
 
     .description-view {
         order: 3;
-        margin: auto;
+        width: 90vw;
     }
 
-    .description {
-        margin: auto;
-        text-align: center;
+    .text1,
+    .text2,
+    .text3,
+    .text4 {
+        width: 90vw;
     }
 }
