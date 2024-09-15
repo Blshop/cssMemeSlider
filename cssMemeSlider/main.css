@@ -2,25 +2,82 @@ html,
 body {
     margin: 0;
     padding: 0;
+    background-color: rgb(39, 39, 39);
+    ;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 
 .container {
     display: flex;
-    flex-flow: row-reverse wrap-reverse;
-    column-gap: 200px;
-    background-color: black;
-    height: 100vh;
+    flex-wrap: wrap;
+    background-color: rgb(39, 39, 39);
+    max-height: 100vh;
     padding: 5vh 5vw;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 5vh;
+}
+
+.controls {
+    order: 3;
+    display: flex;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 3em;
+    height: 6em; */
+    border: 0.3em solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type='radio'] {
+    height: 2em;
+    width: 2em;
+    appearance: none;
+    border-radius: 50%;
+    border: 0.3em solid rgb(108, 92, 255);
+    background-color: rgb(108, 92, 255);
+    transition: 0.2s;
+}
+
+input[type='radio']:hover {
+    border-color: white;
+    background-color: white;
+    transition: 0.2s;
+}
+
+input[type='radio']:active {
+    border-color: gray;
+    background-color: gray;
+    transition: 0.2s;
+}
+
+input[type='radio']:checked {
+    background-color: black;
+    border-color: rgb(108, 92, 255);
+    transition: 0.2s;
 }
 
 .slider-view {
-    width: 100%;
+    order: 1;
+    width: 90vw;
     overflow: hidden;
+    background-color: rgb(172, 152, 152);
+    flex: 0 0 100%
 }
 
 .slider {
     display: flex;
+    align-self: center;
 }
 
 .slide1,
@@ -28,20 +85,25 @@ body {
 .slide3,
 .slide4 {
     display: flex;
-    width: 100%;
-    height: fit-content;
+    width: 90vw;
     flex-shrink: 0;
     justify-content: center;
+    align-items: center;
+    background-color: gray;
+
 
 }
 
 img {
-    height: 75vh;
-    backdrop-filter: blur(10px);
+    z-index: 1;
+    width: 100%;
+    height: auto;
+
 }
 
 .description-view {
-    width: 30vw;
+    order: 2;
+    width: 60vw;
     overflow: hidden;
 }
 
@@ -54,47 +116,71 @@ img {
 .text2,
 .text3,
 .text4 {
-    width: 30vw;
+    width: 60vw;
     flex-shrink: 0;
     color: white;
+    font-size: 2em;
 }
 
 .controls:has(input[id='1']:checked)+*+.slider-view .slider {
     transform: translateX(0%);
-    transition: 1s;
+    transition: 0.4s;
 }
 
 .controls:has(input[id='2']:checked)+*+.slider-view .slider {
     transform: translateX(-100%);
-    transition: 1s;
+    transition: 0.4s;
 }
 
 .controls:has(input[id='3']:checked)+*+.slider-view .slider {
     transform: translateX(-200%);
-    transition: 1s;
+    transition: 0.4s;
 }
 
 .controls:has(input[id='4']:checked)+*+.slider-view .slider {
     transform: translateX(-300%);
-    transition: 1s;
+    transition: 0.4s;
 }
 
 .controls:has(input[id='1']:checked)+.description-view .description {
     transform: translateX(0%);
-    transition: 1s;
+    transition: 0.4s;
 }
 
 .controls:has(input[id='2']:checked)+.description-view .description {
     transform: translateX(-100%);
-    transition: 1s;
+    transition: 0.4s;
 }
 
 .controls:has(input[id='3']:checked)+.description-view .description {
     transform: translateX(-200%);
-    transition: 1s;
+    transition: 0.4s;
 }
 
 .controls:has(input[id='4']:checked)+.description-view .description {
     transform: translateX(-300%);
-    transition: 1s;
+    transition: 0.4s;
+}
+
+@media screen and (max-width:600px) {
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .controls {
+        margin: auto;
+        order: 2;
+    }
+
+    .description-view {
+        order: 3;
+        margin: auto;
+    }
+
+    .description {
+        margin: auto;
+        text-align: center;
+    }
 }
