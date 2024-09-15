@@ -56,6 +56,7 @@ img {
 .text4 {
     width: 30vw;
     flex-shrink: 0;
+    color: white;
 }
 
 .controls:has(input[id='1']:checked)+*+.slider-view .slider {
