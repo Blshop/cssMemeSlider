@@ -9,10 +9,13 @@ body {
     display: flex;
     flex-flow: row-reverse wrap-reverse;
     column-gap: 200px;
+    background-color: black;
+    height: 100vh;
+    padding: 5vh 5vw;
 }
 
 .slider-view {
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -24,26 +27,17 @@ body {
 .slide2,
 .slide3,
 .slide4 {
-    width: 100vw;
-    height: 300px;
+    display: flex;
+    width: 100%;
+    height: fit-content;
     flex-shrink: 0;
+    justify-content: center;
+
 }
 
-.slide1 {
-    background-color: brown;
-}
-
-.slide2 {
-    background-color: aquamarine;
-}
-
-.slide3 {
-    background-color: beige;
-}
-
-.slide4 {
-    background-color: rgb(216, 216, 24);
-
+img {
+    height: 75vh;
+    backdrop-filter: blur(10px);
 }
 
 .description-view {
